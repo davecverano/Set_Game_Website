@@ -1,0 +1,168 @@
+<!DOCTYPE html lang="en">
+<html>
+	<head> 
+    	<!-- Title of file is set to Set -->
+    	<title>Set</title>
+    	
+    	<!-- Pull in game engine -->
+    	<script src="set.js"></script>
+    	
+    	<!-- Link stylesheet so that styling rules apply throughout this file -->
+    	<link rel="stylesheet" type="text/css" href="site.css.scss">
+	</head>
+
+	<!-- Entering body of page -->
+	<body id="pageBody">
+	
+		<!-- Overall header for page -->
+		<h1> Game of Set </h1>
+		
+		<!-- Left column on page -->
+    	<div class="column">
+    	
+    		<!-- Header for Instructions -->
+		    <h3> Instructions </h3>
+		    
+		    <!-- Text of Instructions displayed -->
+		    <p> In this version of the game, 1 to 4 players can compete against each other on the same computer. Each player will be one of the 4 player buttons on the screen, and when they are ready to enter a set they click which player they are and click the cards in the set. If it is right, they gain a point, if not they lose a point. The player with the most score at the end wins. A set is a group of 3 cards that, for each attribute (color, number, texture, shape), all cards match, or all cards are unique. Each attribute is independent of another. Visit <a href="https://en.wikipedia.org/wiki/Set_(card_game)"> the wikipedia page</a> for further clarification, if necessary.
+	<br><br>
+	The "New Game" button will completely reset the game, with a whole new shuffled deck, new cards on the table, and reset everyone's scores. 
+	<br><br>
+	The "Hint" button will upon click, tell you 1 card that is in a set on the table. 
+	<br><br>
+	The "AutoCheck: On/Off" button will if toggled on, automatically detect if there is a set on the table and if not will automatically add 3 cards until there is a findable set. If turned off, this is on the user ot identify and add 3 cards manually with the add 3 cards button.
+	<br><br>
+	The "Add 3 Cards" button adds 3 cards to the board manually upon click. This and AutoCheck Off are the configuration most like the card game.</p>
+	
+			<!-- Spot for cheat code/where hint is displayed -->
+		    <p id="deleteThis"></p>
+
+			<!-- Making all the buttons on first line screen and linking them to function -->
+			<button id="newGameButton" class="button" onclick="newGame()">New Game</button>
+			<button id="hintButton" class="button" onclick="giveHint()">Hint</button>
+			<button id="autoCheckButton" class="button" onclick="toggleAutoCheck()">Auto Check: On</button>
+			<button id="addCardsButton" class="button" onclick="addCards()">Add 3 Cards</button>
+			
+			<hr>
+			<br>
+			<br>
+			
+			<!-- Making all buttons for different players and linking them to the playerHandler function -->
+			<button id="player1" class="button" onclick="playerHandler(this.id)">Player 1 Score: 0</button>
+			<br><br>
+			<button id="player2" class="button" onclick="playerHandler(this.id)">Player 2 Score: 0</button>
+			<br><br>
+			<button id="player3" class="button" onclick="playerHandler(this.id)">Player 3 Score: 0</button>
+			<br><br>
+			<button id="player4" class="button" onclick="playerHandler(this.id)">Player 4 Score: 0</button>
+
+    	</div>
+    	
+    	<!-- Overall Header for game section -->
+		<h3>Game</h3>
+		
+		<!-- Spot for where cards left is displayeed -->
+		<div id ="debug"></div>
+		
+		<!-- Sets up all table spots for as many cards as in deck, max of 30, may not be all used at one time but can be if necessary -->
+    	<div id ="imageSet" class="columnRight">
+    		<table>
+    		<tr>
+    		<td><div id ="image0">
+    		</div></td>
+    		<td><div id ="image1">
+    		</div></td>
+    		<td><div id ="image2">
+    		</div></td>
+    		</tr>
+    		
+    		<tr>
+    		<td><div id ="image3">
+    		</div></td>
+    		<td><div id ="image4">
+    		</div></td>
+    		<td><div id ="image5">
+    		</div></td>
+    		</tr>
+    		
+    		<tr>
+    		<td><div id ="image6">
+    		</div></td>
+    		<td><div id ="image7">
+    		</div></td>
+    		<td><div id ="image8">
+    		</div></td>
+    		</tr>
+    		
+    		<tr>
+    		<td><div id ="image9">
+    		</div></td>
+    		<td><div id ="image10">
+    		</div></td>
+    		<td><div id ="image11">
+    		</div></td>
+    		</tr>
+    		
+    		<tr>
+    		<td><div id ="image12">
+    		</div></td>
+    		<td><div id ="image13">
+    		</div></td>
+    		<td><div id ="image14">
+    		</div></td>
+    		</tr>
+    		
+    		<tr>
+    		<td><div id ="image15">
+    		</div></td>
+    		<td><div id ="image16">
+    		</div></td>
+    		<td><div id ="image17">
+    		</div></td>
+    		</tr>
+    		
+    		<tr>
+    		<td><div id ="image18">
+    		</div></td>
+    		<td><div id ="image19">
+    		</div></td>
+    		<td><div id ="image20">
+    		</div></td>
+    		</tr>
+    		
+    		<tr>
+    		<td><div id ="image21">
+    		</div></td>
+    		<td><div id ="image22">
+    		</div></td>
+    		<td><div id ="image23">
+    		</div></td>
+    		</tr>
+    		
+    		<tr>
+    		<td><div id ="image24">
+    		</div></td>
+    		<td><div id ="image25">
+    		</div></td>
+    		<td><div id ="image26">
+    		</div></td>
+    		</tr>
+    		
+    		<tr>
+    		<td><div id ="image27">
+    		</div></td>
+    		<td><div id ="image28">
+    		</div></td>
+    		<td><div id ="image29">
+    		</div></td>
+    		</tr>
+        	</table>
+        	
+    	</div>
+    	
+    	<!-- Call to main game function which handles the game engine -->
+    	<script>
+			main();
+		</script>
+	</body>
+</html>

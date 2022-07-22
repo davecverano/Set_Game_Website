@@ -6,7 +6,7 @@
 
 ### Intro
 
-This is a personal project to practice javascript by creating a set game
+This is a personal project to practice javascript by creating a set game  
 The goal of this task is to learn fundamentals of web design in javascript 
 
 ### Tools

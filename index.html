@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Set</title>
+    <link rel="stylesheet" href="site.css">
+    <script src="set.js"></script>
+</head>
+<body>
+    <h1>Game of Set</h1>
+
+    <div class="column">
+        <h3>Instructions</h3>
+        <p>
+            1 to 4 players compete on the same computer. When you spot a set, click your player
+            button, then click the three cards. A correct set earns a point; a wrong one loses a point.
+            The player with the highest score when the deck runs out wins.
+        </p>
+        <p>
+            A set is 3 cards where, for each attribute (color, number, shading, shape), the cards are
+            either all the same or all different. See
+            <a href="https://en.wikipedia.org/wiki/Set_(card_game)">Wikipedia</a> for more.
+        </p>
+        <ul class="help">
+            <li><b>New Game</b> reshuffles the deck, deals a new table and resets every score.</li>
+            <li><b>Hint</b> names one card that is part of a set.</li>
+            <li><b>Auto Check</b>, when on, deals 3 more cards automatically whenever there is no set on the table.</li>
+            <li><b>Add 3 Cards</b> deals 3 more cards by hand. Turning Auto Check off and using this button is closest to the real card game.</li>
+        </ul>
+
+        <p id="hint"></p>
+
+        <button id="newGameButton" class="button" onclick="newGame()">New Game</button>
+        <button id="hintButton" class="button" onclick="giveHint()">Hint</button>
+        <button id="autoCheckButton" class="button" onclick="toggleAutoCheck()">Auto Check: On</button>
+        <button id="addCardsButton" class="button" onclick="addCards()">Add 3 Cards</button>
+
+        <hr>
+
+        <div class="players">
+            <button id="player1" class="button" onclick="playerHandler(this.id)">Player 1 Score: 0</button>
+            <button id="player2" class="button" onclick="playerHandler(this.id)">Player 2 Score: 0</button>
+            <button id="player3" class="button" onclick="playerHandler(this.id)">Player 3 Score: 0</button>
+            <button id="player4" class="button" onclick="playerHandler(this.id)">Player 4 Score: 0</button>
+        </div>
+    </div>
+
+    <h3>Game</h3>
+    <div id="cardsLeft"></div>
+    <div class="columnRight">
+        <table id="cardTable"></table>
+    </div>
+
+    <script>main();</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #9e0b0b;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+a {
+  color: #ffd54f;
+}
+
+.help {
+  text-align: left;
+}
+
+.players {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.button.active {
+  outline: 3px solid #ffff00;
+}
+
+/* Left half: instructions and controls */
+.column {
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+
+/* Right half: the cards */
+.columnRight {
+  float: left;
+  width: 50%;
+  padding-left: 120px;
+}
+
+table {
+  margin-left: 50px;
+  text-align: center;
+}
+
+.images {
+  width: 190px;
+  height: 95px;
+  padding: 0;
+  border: 4px solid #000000;
+  cursor: pointer;
+}
+
+.images:hover {
+  opacity: 0.5;
+}
